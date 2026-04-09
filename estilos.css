@@ -105,6 +105,28 @@ button {
     transform: translateY(-2px);
 }
 
-button:active {
-    transform: translateY(0);
+.btn-lista {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #95a5a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-editar-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-editar-link:hover {
+    background: #2980b9;
 }
