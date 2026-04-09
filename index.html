@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sistema de Ventas</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sistema de Ventas</h2>
+
+      <form
+        action="guardar_venta.php"
+        method="POST"
+        onsubmit="return validarFormulario();"
+      >
+        <label>Cliente:</label>
+        <input type="text" name="cliente" id="cliente" required />
+        <span id="error-cliente" class="error"></span>
+
+        <label>Producto:</label>
+        <input type="text" name="producto" id="producto" required />
+        <span id="error-producto" class="error"></span>
+
+        <label>Cantidad:</label>
+        <input
+          type="number"
+          name="cantidad"
+          id="cantidad"
+          min="1"
+          required
+          oninput="marcarTotalInvalido()"
+          onchange="marcarTotalInvalido()"
+        />
+        <span id="error-cantidad" class="error"></span>
+
+        <label>Precio Unitario:</label>
+        <input
+          type="number"
+          step="0.01"
+          name="precio"
+          id="precio"
+          min="0.01"
+          required
+          oninput="marcarTotalInvalido()"
+          onchange="marcarTotalInvalido()"
+        />
+        <span id="error-precio" class="error"></span>
+
+        <label>Total:</label>
+        <input type="number" name="total" id="total" readonly />
+        <span id="error-total" class="error"></span>
+
+        <div class="button-group">
+          <button type="button" onclick="calcularTotal()" class="btn-calcular">
+            Calcular Total
+          </button>
+          <button type="submit" class="btn-registrar">Registrar Venta</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
